@@ -14,7 +14,7 @@ workflows:
       - name: Build unsigned iOS IPA package
         script: |
           cd ios/App
-          xcodebuild -workspace App.xcodeproj -scheme App -configuration Release -sdk iphoneos CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO -archivePath build/App.xcarchive archive
+          xcodebuild -project App.xcodeproj -scheme App -configuration Release -sdk iphoneos CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO -archivePath build/App.xcarchive archive
           xcodebuild -exportArchive -archivePath build/App.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath build/
     artifacts:
       - ios/App/build/*.ipa
