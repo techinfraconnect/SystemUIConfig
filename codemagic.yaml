@@ -14,9 +14,6 @@ workflows:
       - name: Install CocoaPods dependencies
         script: |
           cd ios/App && pod install
-      - name: Sync Capacitor web assets
-        script: |
-          npx cap sync ios
       - name: Build unsigned iOS IPA package
         script: |
           cd ios/App
